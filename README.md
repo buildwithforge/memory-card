@@ -4,7 +4,6 @@
 
 # Memory Card
 
-![release](https://img.shields.io/github/v/release/buildwithforge/memory-card)
 [![build](https://github.com/buildwithforge/memory-card/actions/workflows/build.yml/badge.svg)](https://github.com/buildwithforge/memory-card/actions/workflows/build.yml)
 
 This is a simple [memory card game](https://github.com/phaserjs/create-game/tree/main/scaffolding/demo/memory-card-game). The goal is to match all the cards in the fewest number of moves.
