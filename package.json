@@ -1,0 +1,45 @@
+{
+  "name": "memory-card",
+  "version": "1.0.0",
+  "description": "A template for building Phaser games.",
+  "author": "Mark <mark@remarkablemark.org>",
+  "scripts": {
+    "build": "npm run clean && vite build",
+    "bundle": "scripts/bundle.sh",
+    "clean": "rm -rf dist",
+    "lint": "eslint .",
+    "lint:fix": "npm run lint -- --fix",
+    "lint:tsc": "tsc --noEmit",
+    "prepare": "husky",
+    "preview": "vite preview",
+    "start": "vite --open"
+  },
+  "homepage": "https://buildwithforge.github.io/memory-card/",
+  "dependencies": {
+    "phaser": "3.86.0",
+    "phaser-jsx": "0.11.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "19.6.1",
+    "@commitlint/config-conventional": "19.6.0",
+    "@eslint/compat": "1.2.4",
+    "@eslint/eslintrc": "3.2.0",
+    "@eslint/js": "9.17.0",
+    "@types/gtag.js": "0.0.20",
+    "@types/react": "19.0.2",
+    "@typescript-eslint/eslint-plugin": "8.18.1",
+    "@typescript-eslint/parser": "8.18.1",
+    "buffer": "6.0.3",
+    "eslint": "9.17.0",
+    "eslint-plugin-prettier": "5.2.1",
+    "eslint-plugin-simple-import-sort": "12.1.1",
+    "husky": "9.1.7",
+    "lint-staged": "15.2.11",
+    "prettier": "3.4.2",
+    "typescript": "5.7.2",
+    "vite": "6.0.4",
+    "vite-plugin-html": "3.2.2"
+  },
+  "private": true,
+  "license": "MIT"
+}
