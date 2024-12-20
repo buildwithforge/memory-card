@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/buildwithforge/memory-card/blob/main/public/screenshot.png" alt="Memory Card">
+  <img src="https://github.com/buildwithforge/memory-card/blob/main/public/screenshot.png" alt="Memory Card" width="400">
 </p>
 
 # Memory Card
