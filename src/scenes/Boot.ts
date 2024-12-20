@@ -18,11 +18,9 @@ export class Boot extends Phaser.Scene {
   preload() {
     (async () => {
       const items = await getItems();
-      items.forEach(
-        async ({ name, thumbnail }: { name: string; thumbnail: string }) => {
-          await asyncLoader(this.load.image(name, thumbnail));
-        },
-      );
+      items.forEach(async ({ name, thumbnail }) => {
+        await asyncLoader(this.load.image(name, thumbnail as string));
+      });
     })();
 
     this.load.setPath('assets/');
