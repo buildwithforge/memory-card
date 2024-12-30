@@ -1,7 +1,6 @@
 {
   "name": "memory-card",
-  "version": "1.0.0",
-  "description": "A template for building Phaser games.",
+  "description": "Memory card game built with Forge.",
   "author": "Mark <mark@remarkablemark.org>",
   "scripts": {
     "build": "npm run clean && vite build",
@@ -14,7 +13,6 @@
     "preview": "vite preview",
     "start": "vite --open"
   },
-  "homepage": "https://buildwithforge.github.io/memory-card/",
   "dependencies": {
     "@forgegames/sdk": "0.1.0-alpha.12",
     "phaser": "3.86.0",

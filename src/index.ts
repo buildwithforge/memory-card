@@ -4,8 +4,6 @@ import * as scenes from './scenes';
 
 new Phaser.Game({
   title: 'Memory Card',
-  url: import.meta.env.VITE_APP_HOMEPAGE,
-  version: import.meta.env.VITE_APP_VERSION,
   width: 549,
   height: 480,
   backgroundColor: '#192a56',
