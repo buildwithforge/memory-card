@@ -4,25 +4,20 @@ import { Audio, Image, Scene } from '../constants';
 import { getItems } from '../utils';
 
 function asyncLoader(loaderPlugin: Phaser.Loader.LoaderPlugin) {
-  new Promise((resolve, reject) => {
+  return new Promise((resolve, reject) => {
     loaderPlugin.on('filecomplete', resolve).on('loaderror', reject);
     loaderPlugin.start();
   });
 }
 
 export class Boot extends Phaser.Scene {
+  private asyncImages: Promise<unknown>[] = [];
+
   constructor() {
     super({ key: Scene.Boot });
   }
 
   preload() {
-    (async () => {
-      const items = await getItems();
-      items.forEach(async ({ name, thumbnail }) => {
-        await asyncLoader(this.load.image(name, thumbnail as string));
-      });
-    })();
-
     this.load.setPath('assets/');
 
     this.load.audio(Audio.CardFlip, 'audio/card-flip.mp3');
@@ -38,9 +33,19 @@ export class Boot extends Phaser.Scene {
     this.load.image(Image.Heart, 'ui/heart.png');
     this.load.image(Image.VolumeIcon, 'ui/volume-icon.png');
     this.load.image(Image.VolumeIconOff, 'ui/volume-icon_off.png');
+
+    (async () => {
+      const items = await getItems();
+      this.asyncImages = items.map(({ name, thumbnail }) =>
+        asyncLoader(this.load.image(name, thumbnail!)),
+      );
+    })();
   }
 
   create() {
-    this.scene.start(Scene.Main);
+    (async () => {
+      await Promise.all(this.asyncImages);
+      this.scene.start(Scene.Main);
+    })();
   }
 }
