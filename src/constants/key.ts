@@ -25,4 +25,5 @@ export enum Image {
 export enum Scene {
   Boot = 'Boot',
   Main = 'Main',
+  Preload = 'Preload',
 }

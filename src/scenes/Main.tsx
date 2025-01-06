@@ -75,6 +75,7 @@ export class Main extends Phaser.Scene {
   restartGame() {
     this.cardOpened = undefined;
     this.cameras.main.fadeOut(200 * this.cards.length);
+
     this.cards.reverse().map((card, index) => {
       this.add.tween({
         targets: card.gameObject,
@@ -143,6 +144,7 @@ export class Main extends Phaser.Scene {
         delay: 1000 + index * 200,
         x: 140 + 30 * index, // marginLeft + spaceBetween * index
       });
+
       return heart;
     });
   }
@@ -255,6 +257,7 @@ export class Main extends Phaser.Scene {
                 if (this.cardOpened?.cardName === card.cardName) {
                   // ------- Match -------
                   this.sound.play(Audio.CardMatch);
+
                   // Destroy card selected and card opened from history
                   this.cardOpened.destroy();
                   card.destroy();
@@ -263,6 +266,7 @@ export class Main extends Phaser.Scene {
                   this.cards = this.cards.filter(
                     (cardLocal) => cardLocal.cardName !== card.cardName,
                   );
+
                   // reset history card opened
                   this.cardOpened = undefined;
                   this.canMove = true;
@@ -270,6 +274,7 @@ export class Main extends Phaser.Scene {
                   // ------- No match -------
                   this.sound.play(Audio.CardMismatch);
                   this.cameras.main.shake(600, 0.01);
+
                   // remove life and heart
                   const lastHeart = hearts[hearts.length - 1];
                   this.add.tween({
@@ -283,6 +288,7 @@ export class Main extends Phaser.Scene {
                     },
                   });
                   this.lives -= 1;
+
                   // Flip last card selected and flip the card opened from history and reset history
                   card.flip();
                   this.cardOpened?.flip(() => {
@@ -300,7 +306,6 @@ export class Main extends Phaser.Scene {
                     ease: Phaser.Math.Easing.Bounce.Out,
                     y: this.sys.game.scale.height / 2,
                   });
-
                   this.canMove = false;
                 }
 
