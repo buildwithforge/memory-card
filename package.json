@@ -14,7 +14,7 @@
     "start": "vite --open"
   },
   "dependencies": {
-    "@forgegames/sdk": "0.1.0-alpha.12",
+    "@forgegames/sdk": "0.1.0-alpha.14",
     "phaser": "3.86.0",
     "phaser-jsx": "0.12.2"
   },
