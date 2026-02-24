@@ -16,7 +16,7 @@
   "dependencies": {
     "@forgegames/sdk": "0.1.0-alpha.14",
     "phaser": "3.90.0",
-    "phaser-jsx": "0.12.2"
+    "phaser-jsx": "0.13.7"
   },
   "devDependencies": {
     "@commitlint/cli": "20.4.2",
